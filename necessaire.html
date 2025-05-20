@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nécessaire - Promises Bolsas</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="top-bar">
+        <div class="container">
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/promisesbolsas/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div class="contact-info">
+                <a href="mailto:vendas@promisesbolsas.com.br">
+                    <i class="fas fa-envelope"></i>
+                    vendas@promisesbolsas.com.br
+                </a>
+                <a href="tel:+5541984945727" class="phone-button">
+                    <i class="fas fa-phone"></i>
+                    (41) 98494-5727
+                </a>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo/logo.png" alt="Promises Bolsas"></a>
+            </div>
+            <button class="menu-toggle" type="button">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <button class="close-menu-mobile" id="closeMenuMobile" aria-label="Fechar menu" type="button"><i class="fas fa-times"></i></button>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="mochilas-e-acessorios.html">Mochilas e Acessórios</a></li>
+                    <li><a href="quem-somos.html">Quem somos</a></li>
+                    <li><a href="fale-conosco.html">Fale conosco</a></li>
+                    <li><a href="sac.html">SAC</a></li>
+                </ul>
+                <div class="menu-social-icons">
+                    <a href="https://www.instagram.com/promisesbolsas/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </nav>
+            <div class="header-icons">
+                <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
+                <a href="#" class="heart-icon"><i class="fas fa-heart"></i></a>
+            </div>
+        </div>
+        <div class="menu-overlay"></div>
+    </header>
+    <main>
+        <!-- Banner da página -->
+        <section class="page-banner">
+            <div class="container">
+                <h1>Nécessaire</h1>
+                <p>Organização, praticidade e estilo para o seu dia a dia</p>
+            </div>
+        </section>
+        <!-- Botão FILTRAR para mobile -->
+        <div class="mobile-filter-bar">
+            <button id="openFilterModal" class="filter-btn">
+                <i class="fas fa-sliders-h"></i> FILTRAR
+            </button>
+        </div>
+        <!-- Modal de Filtros (mobile) -->
+        <div id="filterModal" class="filter-modal">
+            <div class="filter-modal-content">
+                <span class="close-modal" id="closeFilterModal">&times;</span>
+                <h3>Categorias</h3>
+                <ul class="filter-categories">
+                    <li><a href="mochilas-e-acessorios.html">Todas as Mochilas</a></li>
+                    <li><a href="bolsa-feminina.html">Bolsa Feminina</a></li>
+                    <li><a href="mochilas-termicas.html">Bolsa Térmica</a></li>
+                    <li><a href="bolsa-viagem.html">Bolsa Viagem</a></li>
+                    <li><a href="frasqueiras.html">Frasqueiras</a></li>
+                    <li><a href="kit-escolar.html">Kit Escolar</a></li>
+                    <li><a href="maleta-profissional.html">Maleta Profissional</a></li>
+                    <li><a href="mochilas.html">Mochilas</a></li>
+                    <li><a href="necessaire.html" class="active">Nécessaire</a></li>
+                    <li><a href="pastas.html">Pastas</a></li>
+                    <li><a href="premium.html">Premium</a></li>
+                    <li><a href="sacolas.html">Sacolas</a></li>
+                    <li><a href="variedades.html">Variedades</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            <div class="container">
+                <a href="index.html">Home</a> >
+                <a href="mochilas-e-acessorios.html">Mochilas e Acessórios</a> >
+                <span>Nécessaire</span>
+            </div>
+        </div>
+        <!-- Filtros e Categorias -->
+        <section class="filters-section">
+            <div class="container">
+                <div class="filters">
+                    <div class="filter-group">
+                        <h3>Categorias</h3>
+                        <ul>
+                            <li><a href="mochilas-e-acessorios.html">Todas as Mochilas</a></li>
+                            <li><a href="bolsa-feminina.html">Bolsa Feminina</a></li>
+                            <li><a href="mochilas-termicas.html">Bolsa Térmica</a></li>
+                            <li><a href="bolsa-viagem.html">Bolsa Viagem</a></li>
+                            <li><a href="frasqueiras.html">Frasqueiras</a></li>
+                            <li><a href="kit-escolar.html">Kit Escolar</a></li>
+                            <li><a href="maleta-profissional.html">Maleta Profissional</a></li>
+                            <li><a href="mochilas.html">Mochilas</a></li>
+                            <li><a href="necessaire.html" class="active">Nécessaire</a></li>
+                            <li><a href="pastas.html">Pastas</a></li>
+                            <li><a href="premium.html">Premium</a></li>
+                            <li><a href="sacolas.html">Sacolas</a></li>
+                            <li><a href="variedades.html">Variedades</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Grid de Produtos -->
+                <div class="products-container">
+                    <div class="products-grid">
+                        <!-- Exemplo de nécessaire 1 -->
+                        <div class="product-card">
+                            <div class="product-badge">NOVIDADE</div>
+                            <img src="images/necessaire/necessarie1.png.jpg" alt="Nécessaire Classic">
+                            <h3>NÉCESSAIRE CLASSIC</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <a href="necessaire-classic.html" class="product-button">SAIBA MAIS</a>
+                        </div>
+                        <!-- Exemplo de nécessaire 2 -->
+                        <div class="product-card">
+                            <div class="product-badge">NOVIDADE</div>
+                            <img src="images/necessaire/necessaire2.png.jpg" alt="Nécessaire Colors">
+                            <h3>NÉCESSAIRE COLORS</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <a href="necessaire-colors.html" class="product-button">SAIBA MAIS</a>
+                        </div>
+                        <!-- Adicione mais nécessaires aqui -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- WhatsApp Button -->
+        <div class="whatsapp-button">
+            <a href="https://wa.me/5541984945727?text=Olá%20vim%20pelo%20site%20da%20Promises%20Bolsas%20e%20gostaria%20de%20saber%20mais%20informação%20sobre%20as%20nécessaires." target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-logo-section">
+                    <div class="footer-logo-square">
+                        <img src="images/logo/logo.png" alt="Promises Bolsas">
+                    </div>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/promisesbolsas/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Onde estamos</h3>
+                    <p>Av. das Industrias, 547</p>
+                    <p>Cidade Industrial de Curitiba</p>
+                    <p>Curitiba - PR</p>
+                    <p>CEP 81310-060</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p>(41) 98494-5727</p>
+                    <p>vendas@promisesbolsas.com.br</p>
+                </div>
+            </div>
+        </div>
+        <nav class="footer-nav">
+            <div class="container">
+                <ul>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="contato.html">Fale conosco</a></li>
+                    <li><a href="#">Perguntas frequentes</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="copyright">
+                    <p>Promises Bolsas © 2025</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

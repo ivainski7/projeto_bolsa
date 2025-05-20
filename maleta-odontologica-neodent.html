@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maleta Odontológica Neodent - Promises Bolsas</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 768px)">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .product-detail-section {
+            margin-top: 40px;
+        }
+        .product-detail-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+            background: #f8f9fa;
+            border-radius: 16px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+            padding: 32px 24px;
+        }
+        .product-detail-image {
+            flex: 0 0 400px;
+            max-width: 400px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+        .product-detail-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .product-detail-info {
+            flex: 1;
+            min-width: 0;
+            padding: 0 10px;
+        }
+        .product-detail-info h1 {
+            font-size: 2.2em;
+            color: #1E4D8C;
+            margin-bottom: 10px;
+        }
+        .product-detail-info .rating {
+            color: #FFD600;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .product-detail-info h2 {
+            font-size: 1.3em;
+            color: #222;
+            margin: 18px 0 10px 0;
+        }
+        .product-detail-info ul {
+            margin: 0 0 18px 0;
+            padding-left: 20px;
+        }
+        .product-detail-info ul li {
+            margin-bottom: 6px;
+            color: #444;
+            font-size: 1em;
+        }
+        .product-detail-info p {
+            color: #444;
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+        @media (max-width: 900px) {
+            .product-detail-container {
+                flex-direction: column;
+                gap: 20px;
+                padding: 18px 6px;
+            }
+            .product-detail-image {
+                max-width: 100%;
+                width: 100%;
+                padding: 12px;
+            }
+        }
+        .product-customization {
+            margin: 30px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        .customization-options {
+            display: flex;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        .customization-options .option {
+            text-align: center;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            flex: 1;
+        }
+        .customization-options .option i {
+            font-size: 24px;
+            color: #1a4789;
+            margin-bottom: 8px;
+            display: block;
+        }
+        .cta-buttons {
+            margin-top: 30px;
+        }
+        .whatsapp-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #25D366;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .whatsapp-cta:hover {
+            background: #128C7E;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo/logo.png" alt="Promises Bolsas"></a>
+            </div>
+            <button class="menu-toggle" type="button">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <button class="close-menu-mobile" id="closeMenuMobile" aria-label="Fechar menu" type="button"><i class="fas fa-times"></i></button>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="mochilas-e-acessorios.html">Mochilas e Acessórios</a></li>
+                    <li><a href="quem-somos.html">Quem somos</a></li>
+                    <li><a href="fale-conosco.html">Fale conosco</a></li>
+                    <li><a href="sac.html">SAC</a></li>
+                </ul>
+                <div class="menu-social-icons">
+                    <a href="https://www.instagram.com/promisesbolsas/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </nav>
+            <div class="header-icons">
+                <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
+                <a href="#" class="heart-icon"><i class="fas fa-heart"></i></a>
+            </div>
+        </div>
+        <div class="menu-overlay"></div>
+    </header>
+    <main>
+        <div class="breadcrumb">
+            <div class="container">
+                <a href="index.html">Home</a> >
+                <a href="mochilas-e-acessorios.html">Mochilas e Acessórios</a> >
+                <a href="maleta-profissional.html">Maleta Profissional</a> >
+                <span>Maleta Odontológica Neodent</span>
+            </div>
+        </div>
+        <section class="product-detail">
+            <div class="container">
+                <div class="product-images">
+                    <div class="main-image">
+                        <div class="product-badge large">NOVIDADE</div>
+                        <img src="images/maleta/Maleta.jpg" alt="Maleta Odontológica Neodent">
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h1>MALETA ODONTOLÓGICA – NEODENT</h1>
+                    <div class="rating large">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="product-description">
+                        <h2>Descrição do Produto</h2>
+                        <ul>
+                            <li><b>Material:</b> Sintético Seville, forro em acoplado, estrutura rígida com pala plástica e arames soldado em torno de toda maleta, alça mão injetada e tiracolo regulável, divisão interna para 2 compartimentos ou mais.</li>
+                            <li><b>Ferragens Níquel:</b> Meia argola, regulador, rebites n°05 (reforço) e cravos no fundo da maleta.</li>
+                            <li><b>Gravação:</b> Baixo relevo, silk</li>
+                            <li><b>Tamanho:</b> 48 x 35 x 19 cm</li>
+                            <li><b>Código:</b> MN003</li>
+                        </ul>
+                    </div>
+                    <div class="product-customization">
+                        <h2>Personalizações Disponíveis</h2>
+                        <div class="customization-options">
+                            <div class="option">
+                                <i class="fas fa-thread"></i>
+                                <span>Bordado</span>
+                            </div>
+                            <div class="option">
+                                <i class="fas fa-paint-brush"></i>
+                                <span>Silk Screen</span>
+                            </div>
+                            <div class="option">
+                                <i class="fas fa-tag"></i>
+                                <span>Tag Personalizada</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cta-buttons">
+                        <a href="https://wa.me/5541984945727?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20Maleta%20Odontológica%20Neodent" class="whatsapp-cta" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                            Solicitar Orçamento
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Produtos Relacionados -->
+        <section class="related-products">
+            <div class="container">
+                <h2>Produtos Relacionados</h2>
+                <div class="products-grid">
+                    <!-- Maleta Odontológica Dentalmed -->
+                    <div class="product-card">
+                        <div class="product-badge">NOVIDADE</div>
+                        <img src="images/maleta/dental_med.png" alt="Maleta Odontológica Dentalmed">
+                        <h3>MALETA ODONTOLÓGICA DENTALMED</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <a href="maleta-odontologica-dentalmed.html" class="product-button">SAIBA MAIS</a>
+                    </div>
+                    <!-- Maletinha de Mão -->
+                    <div class="product-card">
+                        <div class="product-badge">NOVIDADE</div>
+                        <img src="images/maleta/maletinha_de_mao.png" alt="Maletinha de Mão">
+                        <h3>MALETINHA DE MÃO</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <a href="maletinha-de-mao.html" class="product-button">SAIBA MAIS</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-logo-section">
+                    <div class="footer-logo-square">
+                        <img src="images/logo/logo.png" alt="Promises Bolsas">
+                    </div>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/promisesbolsas/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Onde estamos</h3>
+                    <p>Av. das Industrias, 547</p>
+                    <p>Cidade Industrial de Curitiba</p>
+                    <p>Curitiba - PR</p>
+                    <p>CEP 81310-060</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p>(41) 98494-5727</p>
+                    <p>vendas@promisesbolsas.com.br</p>
+                </div>
+            </div>
+        </div>
+        <nav class="footer-nav">
+            <div class="container">
+                <ul>
+                    <li><a href="#">Produtos</a></li>
+                    <li><a href="#">Fale conosco</a></li>
+                    <li><a href="#">Perguntas frequentes</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="copyright">
+                    <p>Promises Bolsas © 2025</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="scroll-to-top" id="scrollTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
