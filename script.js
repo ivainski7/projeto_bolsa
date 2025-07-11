@@ -172,27 +172,27 @@ document.addEventListener('DOMContentLoaded', function() {
         showSlide(currentSlide);
         if (nextBtn) nextBtn.addEventListener('click', nextSlide);
         if (prevBtn) prevBtn.addEventListener('click', prevSlide);
-        sliderWrapper.addEventListener('touchstart', function(e) {
-            touchStartX = e.touches[0].clientX;
-            clearInterval(slideInterval);
-        });
-        sliderWrapper.addEventListener('touchmove', function(e) {
-            touchEndX = e.touches[0].clientX;
-            const diff = touchStartX - touchEndX;
-            if (Math.abs(diff) > 50) {
-                const translateX = -currentSlide * 100 + (-diff / 5);
-                sliderWrapper.style.transform = `translateX(${translateX}%)`;
+    sliderWrapper.addEventListener('touchstart', function(e) {
+        touchStartX = e.touches[0].clientX;
+        clearInterval(slideInterval);
+    });
+    sliderWrapper.addEventListener('touchmove', function(e) {
+        touchEndX = e.touches[0].clientX;
+        const diff = touchStartX - touchEndX;
+        if (Math.abs(diff) > 50) {
+            const translateX = -currentSlide * 100 + (-diff / 5);
+            sliderWrapper.style.transform = `translateX(${translateX}%)`;
+        }
+    });
+    sliderWrapper.addEventListener('touchend', function() {
+        const diff = touchStartX - touchEndX;
+        if (Math.abs(diff) > 50) {
+                if (diff > 0) nextSlide();
+                else prevSlide();
             }
-        });
-        sliderWrapper.addEventListener('touchend', function() {
-            const diff = touchStartX - touchEndX;
-            if (Math.abs(diff) > 50) {
-                    if (diff > 0) nextSlide();
-                    else prevSlide();
-                }
-            sliderWrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
-            startAutoSlide();
-        });
+        sliderWrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
+        startAutoSlide();
+    });
         // ... (demais eventos do slider, protegidos)
     }
 
