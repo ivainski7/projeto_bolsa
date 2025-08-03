@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bolsa Viagem Matelassê - Promises Bolsas</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 768px)">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -33,7 +34,11 @@
             <div class="logo">
                 <a href="index.html"><img src="images/logo/logo.png" alt="Promises Bolsas"></a>
             </div>
+            <button class="menu-toggle" type="button">
+                <i class="fas fa-bars"></i>
+            </button>
             <nav>
+                <button class="close-menu-mobile" id="closeMenuMobile" aria-label="Fechar menu" type="button"><i class="fas fa-times"></i></button>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="mochilas-e-acessorios.html">Mochilas e Acessórios</a></li>
@@ -41,12 +46,17 @@
                     <li><a href="fale-conosco.html">Fale conosco</a></li>
                     <li><a href="sac.html">SAC</a></li>
                 </ul>
+                <div class="menu-social-icons">
+                    <a href="https://www.instagram.com/promisesbolsas/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
             </nav>
             <div class="header-icons">
                 <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
                 <a href="#" class="heart-icon"><i class="fas fa-heart"></i></a>
             </div>
         </div>
+        <div class="menu-overlay"></div>
     </header>
     <main>
         <div class="breadcrumb">
@@ -135,11 +145,34 @@
             <div class="container">
                 <h2>Produtos Relacionados</h2>
                 <div class="products-grid">
+                    <!-- Bolsa Viagem Camuflada -->
                     <div class="product-card">
                         <div class="product-badge">NOVIDADE</div>
                         <img src="images/bolsa-viagem/bolsa_camuflada.png" alt="Bolsa Viagem Camuflada">
                         <h3>BOLSA VIAGEM CAMUFLADA</h3>
-                        <a href="bolsa-viagem-camuflada.html" class="product-button">Saiba Mais</a>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <a href="bolsa-viagem-camuflada.html" class="product-button">SAIBA MAIS</a>
+                    </div>
+
+                    <!-- Bolsa Viagem Premium -->
+                    <div class="product-card">
+                        <div class="product-badge">NOVIDADE</div>
+                        <img src="images/bolsa-viagem/bolsa-viagem.jpg" alt="Bolsa Viagem Premium">
+                        <h3>BOLSA VIAGEM PREMIUM</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <a href="bolsa-viagem-premium.html" class="product-button">SAIBA MAIS</a>
                     </div>
                 </div>
             </div>
@@ -191,5 +224,11 @@
             </div>
         </div>
     </footer>
+
+    <div class="scroll-to-top" id="scrollTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html> 
