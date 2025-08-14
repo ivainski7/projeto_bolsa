@@ -2482,6 +2482,10 @@ body {
     align-items: flex-start;
 }
 
+.valores li strong {
+    margin-right: 8px;
+}
+
 .valores li::before {
     content: '\f058'; /* FontAwesome check-circle */
     font-family: 'Font Awesome 5 Free';
