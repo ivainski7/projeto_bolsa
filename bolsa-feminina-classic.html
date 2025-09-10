@@ -3,18 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pasta - Promises Bolsas</title>
+    <title>Bolsa Feminina Classic - Promises Bolsas</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 768px)">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="top-bar">
         <div class="container">
             <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.facebook.com/share/1aSuzLSb5p/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
                 <a href="https://www.instagram.com/promisesbolsas/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
                 <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.threads.net/@promisesbolsas" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512" fill="currentColor">
+                        <path d="M256 32C132.3 32 32 132.3 32 256s100.3 224 224 224 224-100.3 224-224S379.7 32 256 32zm0 416c-105.9 0-192-86.1-192-192S150.1 64 256 64s192 86.1 192 192-86.1 192-192 192zm0-336c-79.5 0-144 64.5-144 144 0 79.5 64.5 144 144 144s144-64.5 144-144c0-79.5-64.5-144-144-144zm0 256c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112zm0-192c-44.2 0-80 35.8-80 80s35.8 80 80 80 80-35.8 80-80-35.8-80-80-80z"/>
+                        <path d="M336 256c0 44.2-35.8 80-80 80s-80-35.8-80-80 35.8-80 80-80 80 35.8 80 80z" fill="#fff"/>
+                        <path d="M256 176c-44.2 0-80 35.8-80 80s35.8 80 80 80 80-35.8 80-80-35.8-80-80-80zm0 128c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48z"/>
+                    </svg>
+                </a>
             </div>
             <div class="contact-info">
                 <a href="mailto:vendas@promisesbolsas.com.br">
@@ -28,12 +35,17 @@
             </div>
         </div>
     </div>
+
     <header>
         <div class="container">
             <div class="logo">
                 <a href="index.html"><img src="images/logo/logo.png" alt="Promises Bolsas"></a>
             </div>
+            <button class="menu-toggle" type="button">
+                <i class="fas fa-bars"></i>
+            </button>
             <nav>
+                <button class="close-menu-mobile" id="closeMenuMobile" aria-label="Fechar menu" type="button"><i class="fas fa-times"></i></button>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="mochilas-e-acessorios.html">Mochilas e Acessórios</a></li>
@@ -41,75 +53,82 @@
                     <li><a href="fale-conosco.html">Fale conosco</a></li>
                     <li><a href="sac.html">SAC</a></li>
                 </ul>
+                <div class="menu-social-icons">
+                    <a href="https://www.instagram.com/promisesbolsas/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
             </nav>
             <div class="header-icons">
                 <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
                 <a href="#" class="heart-icon"><i class="fas fa-heart"></i></a>
             </div>
         </div>
+        <div class="menu-overlay"></div>
     </header>
+
     <main>
+        <!-- Breadcrumb -->
         <div class="breadcrumb">
             <div class="container">
-                <a href="index.html">Home</a>
-                <a href="pastas.html">Pastas</a>
-                <span>Pasta</span>
+                <a href="index.html">Home</a> >
+                <a href="mochilas-e-acessorios.html">Mochilas e Acessórios</a> >
+                <a href="bolsa-feminina.html">Bolsa Feminina</a> >
+                <span>Bolsa Feminina Classic</span>
             </div>
         </div>
-        <div class="product-detail">
+
+        <!-- Produto Detail Section -->
+        <section class="product-detail">
             <div class="container">
                 <div class="product-images">
                     <div class="main-image">
-                        <div class="product-badge large">NOVIDADE</div>
-                        <img src="images/pastas/pasta.jpg" alt="Pasta">
+                        <img src="images/bolsa-feminina/bolsa feminina.jpg" alt="Bolsa Feminina Classic">
                     </div>
+                    <div class="product-badge large">NOVIDADE</div>
                 </div>
                 <div class="product-info">
-                    <h1>PASTA</h1>
+                    <h1>BOLSA FEMININA CLASSIC</h1>
                     <div class="rating large">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
-                        <span>(5.0)</span>
+                        <span>(156 avaliações)</span>
                     </div>
                     <div class="product-description">
-                        <h2>Características</h2>
+                        <h2>Descrição do Produto</h2>
                         <ul>
-                            <li>Material: sintético new casco</li>
-                            <li>Alça mão injetada e fixa com rebites</li>
-                            <li>Alça ombro regulável</li>
-                            <li>Ferragens níquel</li>
-                            <li>Zíper e cursor n° 08</li>
-                            <li>Forro interno</li>
-                            <li>Bolsos interno</li>
-                            <li>Visor PVC cristal soldado</li>
-                            <li>Gravação: baixo relevo</li>
-                            <li>Tamanho: 46x41x08</li>
-                            <li>Cód: PEM443</li>
+                            <li><strong>Material:</strong> Tecido de alta qualidade com acabamento premium</li>
+                            <li><strong>Compartimentos:</strong> Múltiplos bolsos organizadores internos e externos</li>
+                            <li><strong>Alça:</strong> Alça de ombro ajustável e alça de mão</li>
+                            <li><strong>Fechamento:</strong> Zíper resistente com puxadores em metal</li>
+                            <li><strong>Design:</strong> Estilo clássico e elegante para o dia a dia</li>
+                            <li><strong>Gravação:</strong> Silk, Bordado, Baixo Relevo</li>
+                            <li><strong>Tamanho:</strong> 35x25x15 cm</li>
+                            <li><strong>Código:</strong> BFC001</li>
                         </ul>
                     </div>
                     <div class="cta-buttons">
-                        <a href="https://wa.me/5541984945727?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20Pasta" class="whatsapp-cta" target="_blank">
+                        <a href="https://wa.me/5541984945727?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20Bolsa%20Feminina%20Classic" class="whatsapp-cta" target="_blank">
                             <i class="fab fa-whatsapp"></i>
                             Solicitar Orçamento
                         </a>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- Produtos Relacionados -->
         <section class="related-products">
             <div class="container">
                 <h2>Produtos Relacionados</h2>
                 <div class="products-grid">
-                    <!-- Pasta Executiva -->
+                    <!-- Bolsa Feminina Colors -->
                     <div class="product-card">
                         <div class="product-badge">NOVIDADE</div>
-                        <img src="images/pastas/pasta_executiva.jpg" alt="Pasta Executiva">
-                        <h3>PASTA EXECUTIVA</h3>
+                        <img src="images/bolsa-feminina/bolsa feminina2.jpg" alt="Bolsa Feminina Colors">
+                        <h3>BOLSA FEMININA COLORS</h3>
                         <div class="rating">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -117,14 +136,14 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <a href="pasta-executiva.html" class="product-button">SAIBA MAIS</a>
+                        <a href="bolsa-feminina-colors.html" class="product-button">SAIBA MAIS</a>
                     </div>
 
-                    <!-- Pasta Notebook -->
+                    <!-- Necessaire Classic -->
                     <div class="product-card">
                         <div class="product-badge">NOVIDADE</div>
-                        <img src="images/pastas/pasta_para_notebook.jpg" alt="Pasta Notebook">
-                        <h3>PASTA NOTEBOOK</h3>
+                        <img src="images/necessaire/necessaire2.png.jpg" alt="Nécessaire Classic">
+                        <h3>NÉCESSAIRE CLASSIC</h3>
                         <div class="rating">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -132,14 +151,14 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <a href="pasta-notebook-detalhe.html" class="product-button">SAIBA MAIS</a>
+                        <a href="necessaire-classic.html" class="product-button">SAIBA MAIS</a>
                     </div>
 
-                    <!-- Maleta Profissional -->
+                    <!-- Bolsa Viagem -->
                     <div class="product-card">
                         <div class="product-badge">NOVIDADE</div>
-                        <img src="images/maleta-profissional/maleta_profissional.png" alt="Maleta Profissional">
-                        <h3>MALETA PROFISSIONAL</h3>
+                        <img src="images/bolsa-viagem/bolsa-viagem.jpg" alt="Bolsa Viagem">
+                        <h3>BOLSA VIAGEM</h3>
                         <div class="rating">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -147,7 +166,7 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <a href="maleta-profissional.html" class="product-button">SAIBA MAIS</a>
+                        <a href="bolsa-viagem.html" class="product-button">SAIBA MAIS</a>
                     </div>
                 </div>
             </div>
@@ -155,11 +174,12 @@
 
         <!-- WhatsApp Button -->
         <div class="whatsapp-button">
-            <a href="https://wa.me/5541984945727?text=Olá%20vim%20pelo%20site%20da%20Promises%20Bolsas%20e%20gostaria%20de%20saber%20mais%20informação%20sobre%20as%20pastas." target="_blank">
+            <a href="https://wa.me/5541984945727?text=Olá%20vim%20pelo%20site%20da%20Promises%20Bolsas%20e%20gostaria%20de%20saber%20mais%20informação%20sobre%20as%20bolsas%20femininas." target="_blank">
                 <i class="fab fa-whatsapp"></i>
             </a>
         </div>
     </main>
+
     <footer>
         <div class="footer-main">
             <div class="container">
@@ -169,11 +189,22 @@
                     </div>
                     <div class="social-icons">
                         <a href="https://www.instagram.com/promisesbolsas/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.facebook.com/share/1aSuzLSb5p/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
                         <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.threads.net/@promisesbolsas" target="_blank" rel="noopener noreferrer">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 50 50" fill="currentColor">
+                                <path d="M25,2C12.3,2,2,12.3,2,25s10.3,23,23,23s23-10.3,23-23S37.7,2,25,2z M25,46C13.4,46,4,36.6,4,25S13.4,4,25,4
+                                    s21,9.4,21,21S36.6,46,25,46z"/>
+                                <path d="M32.7,34.2c-2.2,2.1-5.7,2.2-8.1,0.5c-2.2-1.6-3.2-4.2-2.7-7.1c0.5-2.7,2.5-4.5,5.2-4.5c2.2,0,4.1,1.5,4.1,3.5
+                                    c0,1.2-0.7,2.1-1.8,2.1c-0.8,0-1.3-0.5-1.3-1.2c0-0.5,0.3-1,0.8-1.1c0.3-0.1,0.5-0.2,0.5-0.5c0-0.4-0.4-0.7-1-0.7
+                                    c-1.1,0-2.1,1-2.4,2.4c-0.5,2.2,0.5,4.3,2.4,5.6c1.8,1.3,4.3,1.2,5.8-0.3c1.5-1.5,1.7-3.8,0.6-5.7c-1.1-1.9-3.2-3.1-5.5-3.1
+                                    c-3.2,0-5.8,2.5-6.3,6c-0.6,3.7,1.1,7.2,4.2,9.2c3.2,2.1,7.5,1.8,10.2-0.8c2.7-2.6,3.5-6.7,2-10.2c-1.5-3.5-5-5.8-8.8-5.8
+                                    c-5.2,0-9.4,4.1-9.4,9.2c0,5.1,4.2,9.2,9.4,9.2c2.5,0,4.8-0.9,6.6-2.5c0.4-0.4,0.4-1,0-1.4C33.7,33.8,33.1,33.8,32.7,34.2z"/>
+                            </svg>
+                        </a>
                     </div>
                 </div>
+
                 <div class="footer-section">
                     <h3>Onde estamos</h3>
                     <p>Av. das Industrias, 547</p>
@@ -181,6 +212,7 @@
                     <p>Curitiba - PR</p>
                     <p>CEP 81312-000</p>
                 </div>
+
                 <div class="footer-section">
                     <h3>Contato</h3>
                     <p>(41) 98494-5727</p>
@@ -188,16 +220,18 @@
                 </div>
             </div>
         </div>
+
         <nav class="footer-nav">
             <div class="container">
                 <ul>
-                    <li><a href="produtos.html">Produtos</a></li>
-                    <li><a href="contato.html">Fale conosco</a></li>
+                    <li><a href="#">Produtos</a></li>
+                    <li><a href="#">Fale conosco</a></li>
                     <li><a href="#">Perguntas frequentes</a></li>
                     <li><a href="#">Política de Privacidade</a></li>
                 </ul>
             </div>
         </nav>
+
         <div class="footer-bottom">
             <div class="container">
                 <div class="copyright">
@@ -213,4 +247,4 @@
 
     <script src="script.js"></script>
 </body>
-</html> 
+</html>

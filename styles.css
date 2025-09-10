@@ -422,6 +422,35 @@ main {
     margin-top: 40px;
 }
 
+.featured-products .product-card {
+    min-height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.featured-products .product-card .product-button {
+    margin-top: auto;
+    margin-bottom: 0;
+}
+
+.featured-products .product-card img {
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    margin-top: 30px;
+}
+
+.featured-products .product-card h3 {
+    margin: 15px 0 10px 0;
+    min-height: 40px;
+    line-height: 1.2;
+}
+
+.featured-products .product-card .rating {
+    margin: 10px 0 15px 0;
+}
+
 @media (max-width: 1200px) {
     .products-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -932,14 +961,10 @@ main {
     transition: all 0.3s ease;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     margin-bottom: 30px;
-    min-height: 430px;
+    min-height: 450px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-}
-
-.product-card .product-button {
-    margin-top: auto;
 }
 
 .product-card img {
@@ -951,6 +976,7 @@ main {
     transition: transform 0.3s ease;
     background: #f8f9fa;
     border-radius: 6px;
+    display: block;
 }
 
 .product-card:hover {
@@ -964,9 +990,10 @@ main {
 .product-card h3 {
     color: #1E4D8C;
     font-size: 18px;
-    margin: 15px 0;
+    margin: 15px 0 10px 0;
     min-height: 40px;
     font-weight: bold;
+    line-height: 1.2;
 }
 
 .product-badge {
@@ -990,7 +1017,7 @@ main {
 .rating {
     color: #FFD700;
     font-size: 16px;
-    margin-top: 10px;
+    margin: 10px 0 15px 0;
     display: flex;
     justify-content: center;
     gap: 5px;
@@ -1725,6 +1752,11 @@ footer {
     transition: all 0.3s ease;
 }
 
+.product-card .product-button {
+    margin-top: auto;
+    margin-bottom: 0;
+}
+
 .product-button:hover {
     background-color: #00A896;
     transform: translateY(-2px);
@@ -1914,10 +1946,39 @@ nav ul a.active {
 }
 
 .related-products .products-grid {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.related-products .product-card {
+    min-height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.related-products .product-card .product-button {
+    margin-top: auto;
+    margin-bottom: 0;
+}
+
+.related-products .product-card img {
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    margin-top: 30px;
+}
+
+.related-products .product-card h3 {
+    margin: 15px 0 10px 0;
+    min-height: 40px;
+    line-height: 1.2;
+}
+
+.related-products .product-card .rating {
+    margin: 10px 0 15px 0;
 }
 
 @media (max-width: 768px) {
