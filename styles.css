@@ -126,6 +126,8 @@ header {
     width: 100%;
     padding: 20px 0;
     border-bottom: 1px solid #eee;
+    position: relative;
+    z-index: 100;
 }
 
 .header-container {
@@ -146,29 +148,101 @@ header {
     width: auto;
 }
 
-nav {
-    flex: 1;
-    display: flex;
-    justify-content: center;
+/* DESKTOP HEADER */
+@media (min-width: 769px) {
+    header {
+        position: static;
+        top: auto;
+        left: auto;
+        width: 100%;
+        background: white;
+        z-index: 100;
+        padding: 20px 0;
+        box-shadow: none;
+        transform: none;
+    }
+
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: static;
+        padding: 0 15px;
+    }
+
+    .logo {
+        margin: 0;
+        padding: 0;
+        z-index: auto;
+        position: static;
+    }
+
+    .logo img {
+        width: auto;
+        height: 70px;
+        display: block;
+    }
+
+    .menu-toggle {
+        display: none !important;
+    }
 }
 
-nav ul {
-    display: flex;
-    gap: 25px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
+/* DESKTOP NAVIGATION */
+@media (min-width: 769px) {
+    nav {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        position: static;
+        width: auto;
+        height: auto;
+        background: transparent;
+        box-shadow: none;
+        transform: none;
+        overflow: visible;
+        z-index: auto;
+    }
 
-nav ul li a {
-    text-decoration: none;
-    color: #666;
-    font-size: 15px;
-    transition: color 0.3s;
-}
+    nav ul {
+        display: flex;
+        gap: 25px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        flex-direction: row;
+    }
 
-nav ul li a:hover {
-    color: #00A896;
+    nav ul li {
+        width: auto;
+        border-bottom: none;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: #666;
+        font-size: 15px;
+        transition: color 0.3s;
+        padding: 0;
+        display: block;
+        min-height: auto;
+        border-bottom: none;
+        position: static;
+        overflow: visible;
+        background: none;
+        transform: none;
+    }
+
+    nav ul li a:hover {
+        color: #00A896;
+        background: none;
+        padding-left: 0;
+        transform: none;
+    }
+
+    nav ul li a::before {
+        display: none;
+    }
 }
 
 .header-icons {
@@ -177,6 +251,14 @@ nav ul li a:hover {
 
 main {
     margin-top: 0;
+}
+
+/* DESKTOP MAIN */
+@media (min-width: 769px) {
+    main {
+        margin-top: 0 !important;
+        padding-top: 0;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -371,6 +453,80 @@ main {
     align-items: center;
 }
 
+/* DESKTOP HERO */
+@media (min-width: 769px) {
+    .hero {
+        min-height: 600px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero .container {
+        position: relative;
+        min-height: 600px;
+        display: flex;
+        align-items: center;
+    }
+
+    .hero-content h1 {
+        font-size: 42px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: white;
+    }
+
+    .hero-content h2 {
+        font-size: 36px;
+        color: #00A896;
+        line-height: 1.2;
+        margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .cta-button {
+        background: #1E4D8C;
+        color: #fff;
+        font-size: 1.1rem;
+        padding: 14px 32px;
+        border: none;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(33,150,243,0.08);
+        cursor: pointer;
+        transition: background 0.3s, transform 0.2s;
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .cta-button:hover {
+        background: #153C70;
+        transform: translateY(-2px) scale(1.03);
+    }
+
+    .cta-button.secondary {
+        background-color: transparent;
+        border: 2px solid white;
+    }
+
+    .cta-button.secondary:hover {
+        background-color: white;
+        color: #1E4D8C;
+    }
+
+    .cta-button.whatsapp {
+        background-color: #25D366;
+    }
+
+    .cta-button.whatsapp:hover {
+        background-color: #20bd5a;
+    }
+}
+
 .hero-content {
     color: white;
     max-width: 500px;
@@ -480,11 +636,43 @@ main {
     margin-bottom: 50px;
 }
 
-.products-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin-top: 40px;
+/* DESKTOP PRODUCTS */
+@media (min-width: 769px) {
+    .products-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .featured-products .product-card {
+        min-height: 450px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .featured-products .product-card .product-button {
+        margin-top: auto;
+        margin-bottom: 0;
+    }
+
+    .featured-products .product-card img {
+        height: 180px;
+        object-fit: contain;
+        margin-bottom: 15px;
+        margin-top: 30px;
+    }
+
+    .featured-products .product-card h3 {
+        margin: 15px 0 10px 0;
+        min-height: 40px;
+        line-height: 1.2;
+    }
+
+    .featured-products .product-card .rating {
+        margin: 10px 0 15px 0;
+    }
 }
 
 .featured-products .product-card {
@@ -1156,11 +1344,23 @@ footer {
     padding: 50px 0;
 }
 
-.footer-main .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 40px;
+/* DESKTOP FOOTER */
+@media (min-width: 769px) {
+    .footer-main .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .footer-section {
+        flex: 0 1 auto;
+        text-align: left;
+    }
+
+    .footer-logo-section {
+        align-items: flex-start;
+    }
 }
 
 .footer-logo-section {
