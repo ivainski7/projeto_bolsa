@@ -233,22 +233,24 @@ main {
         position: fixed;
         top: 0;
         left: 0;
-        width: 80vw;
-        max-width: 320px;
+        width: 85vw;
+        max-width: 350px;
         height: 100vh;
         background: #fff;
         z-index: 1101 !important;
-        transition: left 0.3s;
+        transition: transform 0.3s ease;
         overflow-y: auto;
         display: block;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        -webkit-overflow-scrolling: touch;
     }
 
     nav:not(.active) {
-        left: -80vw;
+        transform: translateX(-100%);
     }
 
     nav.active {
-        left: 0;
+        transform: translateX(0);
     }
 
     nav ul {
@@ -262,10 +264,23 @@ main {
     }
 
     nav ul li a {
-        padding: 15px 0;
+        padding: 18px 20px;
         display: block;
         font-size: 16px;
         color: #333;
+        border-bottom: 1px solid #f0f0f0;
+        transition: all 0.3s ease;
+        -webkit-tap-highlight-color: transparent;
+        min-height: 54px;
+        display: flex;
+        align-items: center;
+    }
+    
+    nav ul li a:hover,
+    nav ul li a:active {
+        background-color: #f8f9fa;
+        color: #1E4D8C;
+        padding-left: 30px;
     }
 
     /* Ajuste no main para compensar o header fixo */
@@ -1145,6 +1160,61 @@ footer {
 }
 
 /* RESPONSIVIDADE GERAL */
+/* TABLET STYLES (768px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+  
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+  
+  .hero-content h1 {
+    font-size: 38px;
+  }
+  
+  .hero-content h2 {
+    font-size: 30px;
+  }
+  
+  .hero-buttons {
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .cta-button {
+    flex: 1;
+    max-width: 200px;
+  }
+  
+  .customize-section .container {
+    flex-direction: row;
+    gap: 40px;
+  }
+  
+  .customize-content {
+    padding-right: 20px;
+  }
+  
+  .customize-slider {
+    max-width: 400px;
+    height: 400px;
+  }
+  
+  .footer-main .container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .footer-section {
+    flex: 1;
+    text-align: left;
+  }
+}
+
 @media (max-width: 1024px) {
   .container {
     max-width: 100%;
@@ -1152,6 +1222,26 @@ footer {
   }
     .products-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .hero-content h1 {
+        font-size: 36px;
+    }
+    
+    .hero-content h2 {
+        font-size: 28px;
+    }
+    
+    .customize-section .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    
+    .customize-content {
+        padding-right: 0;
+        max-width: 100%;
     }
 }
 
@@ -1209,22 +1299,141 @@ footer {
   .container {
     padding: 0 4px;
   }
+  
   .logo img {
     width: 90px;
   }
+  
   .product-card {
     padding: 10px;
+    margin-bottom: 15px;
   }
+  
   .product-badge {
     font-size: 12px;
     padding: 4px 8px;
   }
+  
   .footer-main .container > * {
     margin-bottom: 20px;
   }
+  
   .social-icons a {
     font-size: 20px;
     margin: 0 8px;
+  }
+  
+  /* Melhorias para telas muito pequenas */
+  .hero-content h1 {
+    font-size: 22px;
+    line-height: 1.2;
+  }
+  
+  .hero-content h2 {
+    font-size: 16px;
+  }
+  
+  .cta-button {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+  
+  .products-grid {
+    gap: 10px;
+    margin: 15px 0;
+  }
+  
+  .product-card img {
+    max-width: 100%;
+    height: auto;
+    max-height: 150px;
+  }
+  
+  .footer-bottom .container {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  
+  /* Menu mobile para telas pequenas */
+  nav {
+    width: 90vw;
+    max-width: 300px;
+  }
+  
+  nav ul li a {
+    padding: 15px 16px;
+    font-size: 15px;
+    min-height: 50px;
+  }
+  
+  /* Botão WhatsApp menor */
+  .whatsapp-button {
+    bottom: 15px;
+    right: 15px;
+  }
+  
+  .whatsapp-button a {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .whatsapp-button i {
+    font-size: 24px;
+  }
+}
+
+/* ORIENTAÇÃO LANDSCAPE PARA MOBILE */
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero {
+    min-height: 400px;
+    padding: 20px 0;
+  }
+  
+  .hero-content h1 {
+    font-size: 28px;
+  }
+  
+  .hero-content h2 {
+    font-size: 20px;
+  }
+  
+  .hero-buttons {
+    flex-direction: row;
+    gap: 10px;
+  }
+  
+  .cta-button {
+    flex: 1;
+    max-width: 150px;
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+  
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .product-card {
+    padding: 15px;
+  }
+  
+  .product-card img {
+    max-height: 120px;
+  }
+  
+  /* Menu mobile em landscape */
+  nav {
+    width: 60vw;
+    max-width: 400px;
+  }
+  
+  nav ul li a {
+    padding: 12px 20px;
+    min-height: 44px;
   }
 }
 
@@ -2093,21 +2302,64 @@ body {
     color: #999;
 }
 
-/* Melhorias na performance de scroll */
+/* Melhorias na performance de scroll e interações touch */
 @media (max-width: 768px) {
     html {
         scroll-behavior: smooth;
+        -webkit-text-size-adjust: 100%;
     }
 
     body {
         -webkit-overflow-scrolling: touch;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
     }
 
     /* Evita zoom indesejado em inputs */
     input[type="text"],
     input[type="email"],
-    input[type="tel"] {
+    input[type="tel"],
+    input[type="password"],
+    textarea,
+    select {
         font-size: 16px;
+        -webkit-appearance: none;
+        border-radius: 0;
+    }
+
+    /* Melhorar área de toque para botões */
+    button,
+    .cta-button,
+    .product-button,
+    .menu-toggle {
+        min-height: 44px;
+        min-width: 44px;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+    }
+
+    /* Melhorar área de toque para links */
+    nav ul li a,
+    .footer-nav a {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Otimizar imagens para mobile */
+    img {
+        max-width: 100%;
+        height: auto;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    /* Melhorar scroll suave */
+    * {
+        -webkit-overflow-scrolling: touch;
     }
 }
 
