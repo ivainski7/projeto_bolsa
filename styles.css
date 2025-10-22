@@ -228,7 +228,7 @@ main {
         padding: 5px;
     }
 
-    /* Menu Mobile */
+    /* Menu Mobile - Versão Universal */
     nav {
         position: fixed;
         top: 0;
@@ -236,21 +236,46 @@ main {
         width: 85vw;
         max-width: 350px;
         height: 100vh;
+        height: 100dvh;
+        height: 100svh;
         background: #fff;
         z-index: 1101 !important;
-        transition: transform 0.3s ease;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         overflow-y: auto;
+        overflow-x: hidden;
         display: block;
-        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        box-shadow: 2px 0 15px rgba(0,0,0,0.15);
         -webkit-overflow-scrolling: touch;
-    }
-
-    nav:not(.active) {
+        overscroll-behavior: contain;
         transform: translateX(-100%);
+        will-change: transform;
     }
 
     nav.active {
         transform: translateX(0);
+    }
+    
+    /* Overlay do menu */
+    .menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        height: 100dvh;
+        height: 100svh;
+        background: rgba(0,0,0,0.5);
+        z-index: 1000 !important;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+    }
+
+    .menu-overlay.active {
+        opacity: 1;
+        visibility: visible;
     }
 
     nav ul {
@@ -265,22 +290,47 @@ main {
 
     nav ul li a {
         padding: 18px 20px;
-        display: block;
+        display: flex;
+        align-items: center;
         font-size: 16px;
         color: #333;
         border-bottom: 1px solid #f0f0f0;
-        transition: all 0.3s ease;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         -webkit-tap-highlight-color: transparent;
         min-height: 54px;
-        display: flex;
-        align-items: center;
+        text-decoration: none;
+        touch-action: manipulation;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    nav ul li a::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(30, 77, 140, 0.1), transparent);
+        transition: left 0.5s ease;
     }
     
     nav ul li a:hover,
-    nav ul li a:active {
+    nav ul li a:active,
+    nav ul li a:focus {
         background-color: #f8f9fa;
         color: #1E4D8C;
         padding-left: 30px;
+        transform: translateX(5px);
+    }
+    
+    nav ul li a:hover::before,
+    nav ul li a:active::before {
+        left: 100%;
     }
 
     /* Ajuste no main para compensar o header fixo */
@@ -852,26 +902,35 @@ main {
     }
 }
 
-/* Ajustes específicos para iPhone */
+/* CORREÇÕES ESPECÍFICAS PARA TODOS OS CELULARES */
+
+/* iPhone Safari - Correções específicas */
 @supports (-webkit-touch-callout: none) {
+    /* Corrigir altura da viewport no iPhone */
+    .hero {
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
+    }
+    
+    /* Menu mobile para iPhone */
     nav {
         position: fixed;
         top: 0;
-        left: -100%;
+        left: 0;
         width: 85%;
+        height: 100vh;
         height: -webkit-fill-available;
-        max-height: 100vh;
         background: white;
         z-index: 1001;
-        transition: all 0.3s ease;
-        padding-top: 80px;
+        transition: transform 0.3s ease;
+        padding-top: 0;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
         transform: translateX(-100%);
+        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
     }
 
     nav.active {
-        left: 0;
         transform: translateX(0);
     }
 
@@ -880,8 +939,8 @@ main {
         top: 0;
         left: 0;
         width: 100%;
+        height: 100vh;
         height: -webkit-fill-available;
-        max-height: 100vh;
         background: rgba(0,0,0,0.5);
         z-index: 999;
         opacity: 0;
@@ -894,22 +953,70 @@ main {
         visibility: visible;
     }
 
-    .menu-toggle {
+    /* Corrigir botões no iPhone */
+    .menu-toggle,
+    .cta-button,
+    .product-button {
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+
+    /* Corrigir links no iPhone */
+    nav a,
+    .footer-nav a {
         -webkit-tap-highlight-color: transparent;
         touch-action: manipulation;
     }
 
-    nav a {
-        -webkit-tap-highlight-color: transparent;
-        touch-action: manipulation;
-    }
-
+    /* Prevenir scroll do body quando menu aberto */
     body.menu-open {
         position: fixed;
         width: 100%;
         height: 100vh;
         height: -webkit-fill-available;
         overflow: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Corrigir inputs no iPhone */
+    input, textarea, select {
+        -webkit-appearance: none;
+        border-radius: 0;
+        font-size: 16px;
+    }
+}
+
+/* Android Chrome - Correções específicas */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    /* Corrigir altura da viewport no Android */
+    .hero {
+        min-height: 100vh;
+        min-height: 100dvh;
+    }
+    
+    /* Menu mobile para Android */
+    nav {
+        height: 100vh;
+        height: 100dvh;
+    }
+    
+    .menu-overlay {
+        height: 100vh;
+        height: 100dvh;
+    }
+    
+    /* Corrigir scroll no Android */
+    body {
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: none;
+    }
+    
+    /* Corrigir botões no Android */
+    button, .cta-button, .product-button {
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
     }
 }
 
@@ -1245,6 +1352,138 @@ footer {
     }
 }
 
+/* CORREÇÕES PARA TODAS AS RESOLUÇÕES DE CELULAR */
+
+/* Resoluções pequenas (320px - 375px) */
+@media (max-width: 375px) {
+  .container {
+    padding: 0 8px;
+  }
+  
+  .logo img {
+    width: 100px;
+    height: auto;
+  }
+  
+  .hero-content h1 {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+  
+  .hero-content h2 {
+    font-size: 14px;
+  }
+  
+  .cta-button {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+  
+  .product-card {
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .product-card img {
+    max-height: 120px;
+  }
+  
+  nav {
+    width: 90vw;
+    max-width: 280px;
+  }
+  
+  nav ul li a {
+    padding: 12px 14px;
+    font-size: 14px;
+    min-height: 48px;
+  }
+}
+
+/* Resoluções médias (376px - 414px) */
+@media (min-width: 376px) and (max-width: 414px) {
+  .container {
+    padding: 0 12px;
+  }
+  
+  .logo img {
+    width: 110px;
+    height: auto;
+  }
+  
+  .hero-content h1 {
+    font-size: 22px;
+    line-height: 1.2;
+  }
+  
+  .hero-content h2 {
+    font-size: 16px;
+  }
+  
+  .cta-button {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+  
+  .product-card {
+    padding: 12px;
+    margin-bottom: 15px;
+  }
+  
+  nav {
+    width: 85vw;
+    max-width: 320px;
+  }
+  
+  nav ul li a {
+    padding: 15px 18px;
+    font-size: 15px;
+    min-height: 50px;
+  }
+}
+
+/* Resoluções grandes (415px - 768px) */
+@media (min-width: 415px) and (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+  
+  .logo img {
+    width: 130px;
+    height: auto;
+  }
+  
+  .hero-content h1 {
+    font-size: 26px;
+    line-height: 1.2;
+  }
+  
+  .hero-content h2 {
+    font-size: 18px;
+  }
+  
+  .cta-button {
+    padding: 14px 20px;
+    font-size: 15px;
+  }
+  
+  .product-card {
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+  
+  nav {
+    width: 80vw;
+    max-width: 350px;
+  }
+  
+  nav ul li a {
+    padding: 18px 20px;
+    font-size: 16px;
+    min-height: 54px;
+  }
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 0 8px;
@@ -1435,6 +1674,128 @@ footer {
     padding: 12px 20px;
     min-height: 44px;
   }
+}
+
+/* CORREÇÕES ESPECÍFICAS POR NAVEGADOR MOBILE */
+
+/* Chrome Mobile */
+@media screen and (-webkit-min-device-pixel-ratio: 0) and (max-width: 768px) {
+    /* Corrigir problemas específicos do Chrome Mobile */
+    .hero {
+        min-height: 100vh;
+        min-height: 100dvh;
+    }
+    
+    nav {
+        height: 100vh;
+        height: 100dvh;
+    }
+    
+    .menu-overlay {
+        height: 100vh;
+        height: 100dvh;
+    }
+    
+    /* Corrigir scroll no Chrome Mobile */
+    body {
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: none;
+    }
+    
+    /* Corrigir botões no Chrome Mobile */
+    button, .cta-button, .product-button {
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+    }
+}
+
+/* Firefox Mobile */
+@-moz-document url-prefix() {
+    @media (max-width: 768px) {
+        /* Corrigir problemas específicos do Firefox Mobile */
+        .hero {
+            min-height: 100vh;
+        }
+        
+        nav {
+            height: 100vh;
+        }
+        
+        .menu-overlay {
+            height: 100vh;
+        }
+        
+        /* Corrigir scroll no Firefox Mobile */
+        body {
+            scroll-behavior: smooth;
+        }
+        
+        /* Corrigir botões no Firefox Mobile */
+        button, .cta-button, .product-button {
+            -moz-user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+    }
+}
+
+/* Safari Mobile */
+@media screen and (-webkit-min-device-pixel-ratio: 0) and (max-width: 768px) {
+    /* Corrigir problemas específicos do Safari Mobile */
+    .hero {
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
+    }
+    
+    nav {
+        height: 100vh;
+        height: -webkit-fill-available;
+    }
+    
+    .menu-overlay {
+        height: 100vh;
+        height: -webkit-fill-available;
+    }
+    
+    /* Corrigir scroll no Safari Mobile */
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Corrigir botões no Safari Mobile */
+    button, .cta-button, .product-button {
+        -webkit-tap-highlight-color: transparent;
+        -webkit-user-select: none;
+    }
+}
+
+/* Edge Mobile */
+@supports (-ms-ime-align: auto) {
+    @media (max-width: 768px) {
+        /* Corrigir problemas específicos do Edge Mobile */
+        .hero {
+            min-height: 100vh;
+        }
+        
+        nav {
+            height: 100vh;
+        }
+        
+        .menu-overlay {
+            height: 100vh;
+        }
+        
+        /* Corrigir scroll no Edge Mobile */
+        body {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        /* Corrigir botões no Edge Mobile */
+        button, .cta-button, .product-button {
+            -ms-touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+    }
 }
 
 /* FIM DOS AJUSTES DE RESPONSIVIDADE */
@@ -2302,17 +2663,57 @@ body {
     color: #999;
 }
 
-/* Melhorias na performance de scroll e interações touch */
-@media (max-width: 768px) {
+/* CORREÇÕES ESPECÍFICAS POR MARCA DE CELULAR */
+
+/* Samsung Galaxy - Correções específicas */
+@media screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 768px) {
+    /* Corrigir altura da viewport no Samsung */
+    .hero {
+        min-height: 100vh;
+        min-height: 100svh;
+    }
+    
+    /* Menu mobile para Samsung */
+    nav {
+        height: 100vh;
+        height: 100svh;
+    }
+    
+    .menu-overlay {
+        height: 100vh;
+        height: 100svh;
+    }
+    
+    /* Corrigir scroll no Samsung */
+    body {
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: none;
+        scroll-behavior: smooth;
+    }
+    
+    /* Corrigir botões no Samsung */
+    button, .cta-button, .product-button {
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+        min-height: 48px;
+        min-width: 48px;
+    }
+}
+
+/* Xiaomi/MIUI - Correções específicas */
+@media screen and (max-width: 768px) {
+    /* Corrigir problemas específicos do MIUI */
     html {
         scroll-behavior: smooth;
         -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
     }
 
     body {
         -webkit-overflow-scrolling: touch;
         -webkit-tap-highlight-color: transparent;
         touch-action: manipulation;
+        overscroll-behavior: none;
     }
 
     /* Evita zoom indesejado em inputs */
@@ -2324,6 +2725,8 @@ body {
     select {
         font-size: 16px;
         -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
         border-radius: 0;
     }
 
@@ -2332,19 +2735,24 @@ body {
     .cta-button,
     .product-button,
     .menu-toggle {
-        min-height: 44px;
-        min-width: 44px;
+        min-height: 48px;
+        min-width: 48px;
         -webkit-tap-highlight-color: transparent;
         touch-action: manipulation;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
     }
 
     /* Melhorar área de toque para links */
     nav ul li a,
     .footer-nav a {
-        min-height: 44px;
+        min-height: 48px;
         display: flex;
         align-items: center;
         -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
     }
 
     /* Otimizar imagens para mobile */
@@ -2355,11 +2763,31 @@ body {
         -moz-user-select: none;
         -ms-user-select: none;
         user-select: none;
+        -webkit-touch-callout: none;
     }
 
     /* Melhorar scroll suave */
     * {
         -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Corrigir problemas de viewport */
+    .hero {
+        min-height: 100vh;
+        min-height: 100dvh;
+    }
+    
+    /* Corrigir menu mobile */
+    nav {
+        height: 100vh;
+        height: 100dvh;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+    }
+    
+    .menu-overlay {
+        height: 100vh;
+        height: 100dvh;
     }
 }
 
