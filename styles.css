@@ -808,6 +808,15 @@ main {
         margin-top: 70px;
     }
 
+    /* Products section mobile */
+    .products-section {
+        padding: 20px 0;
+    }
+
+    .products-section .container {
+        padding: 0 15px;
+    }
+
     .page-banner h1 {
         font-size: 24px;
         margin-bottom: 10px;
@@ -3439,6 +3448,18 @@ body {
 .filter-group a:hover {
     color: #007bff;
     transform: translateX(5px);
+}
+
+/* Seção de Produtos */
+.products-section {
+    padding: 40px 0;
+    background-color: #f9f9fa;
+}
+
+.products-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
 /* Estilos da Paginação */
