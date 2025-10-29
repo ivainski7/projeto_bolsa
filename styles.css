@@ -269,6 +269,9 @@ main {
     margin-top: 0;
     position: relative;
     z-index: 1;
+    clear: both;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 /* DESKTOP MAIN */
@@ -808,13 +811,40 @@ main {
         margin-top: 70px;
     }
 
+    /* Layout mobile - uma coluna */
+    .main-content-grid {
+        display: block;
+        padding: 20px 15px;
+    }
+
+    .filters-section {
+        margin-bottom: 20px;
+    }
+
     /* Products section mobile */
     .products-section {
-        padding: 20px 0;
+        padding: 0;
+        clear: both;
+        position: relative;
     }
 
     .products-section .container {
-        padding: 0 15px;
+        padding: 0;
+        clear: both;
+    }
+
+    main {
+        clear: both;
+        position: relative;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    footer {
+        clear: both;
+        position: relative;
+        width: 100%;
+        margin-top: 0;
     }
 
     .page-banner h1 {
@@ -976,15 +1006,44 @@ main {
             display: none !important;
         }
 
+        /* Layout lado a lado no desktop */
+        .main-content-grid {
+            display: grid !important;
+            grid-template-columns: 280px 1fr !important;
+            gap: 40px !important;
+            align-items: start !important;
+            padding: 40px 20px 60px 20px !important;
+        }
+
+        .filters-section {
+            position: sticky !important;
+            top: 120px !important;
+            height: fit-content !important;
+            margin-bottom: 0 !important;
+            width: 100% !important;
+        }
+
         .filters-section .desktop-only,
         .filters-section .filters {
             display: block !important;
         }
 
-        .filters-section .container {
-            display: grid !important;
-            grid-template-columns: 250px 1fr;
-            gap: 40px;
+        .filter-group {
+            max-width: 100% !important;
+            position: sticky !important;
+            top: 120px !important;
+            margin-bottom: 0 !important;
+        }
+
+        .products-section {
+            min-width: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+        }
+
+        .products-section .products-grid {
+            grid-template-columns: repeat(3, 1fr) !important;
+            gap: 30px !important;
         }
     }
 
@@ -1950,13 +2009,13 @@ main {
 
 .product-card {
     background: white;
-    border-radius: 8px;
+    border-radius: 10px;
     padding: 20px;
     text-align: center;
     position: relative;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 0;
     min-height: 450px;
     display: flex;
     flex-direction: column;
@@ -1995,8 +2054,7 @@ main {
 .product-badge {
     position: absolute;
     top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 10px;
     background: #1E4D8C;
     color: white;
     padding: 5px 15px;
@@ -2004,6 +2062,7 @@ main {
     font-size: 12px;
     font-weight: bold;
     z-index: 1;
+    transform: none;
 }
 
 .product-badge.novidade {
@@ -2024,6 +2083,10 @@ footer {
     background-color: white;
     margin-top: 50px;
     color: #333;
+    clear: both;
+    position: relative;
+    width: 100%;
+    z-index: 1;
 }
 
 .footer-main {
@@ -3128,70 +3191,115 @@ footer {
 
 /* Página de Mochilas e Acessórios */
 .page-banner {
-    background: linear-gradient(90deg, #1E4D8C 0%, #153C70 100%);
+    background: linear-gradient(90deg, #0D8B77 0%, #06C2A4 100%);
     padding: 60px 0;
     text-align: center;
     color: white;
-    margin-bottom: 50px;
+    margin-bottom: 0;
 }
 
 .page-banner h1 {
     font-size: 42px;
     margin-bottom: 15px;
+    font-weight: 600;
 }
 
 .page-banner p {
     font-size: 18px;
-    opacity: 0.9;
+    opacity: 0.95;
 }
 
+/* Container principal para filtros e produtos lado a lado */
+.main-content-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px 60px 20px;
+    background-color: #ffffff;
+}
+
+
 .filters-section {
-    padding: 40px 0;
+    padding: 0;
+    background-color: transparent;
+    clear: none;
+    position: relative;
+    width: 100%;
+    overflow: visible;
 }
 
 .filters-section .container {
     display: block;
+    max-width: 100%;
+    padding: 0;
+    clear: none;
+    position: relative;
 }
 
 .filter-group {
     background: white;
-    padding: 20px;
+    padding: 25px 20px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    max-width: 300px;
+    max-width: 100%;
 }
 
 .filter-group h3 {
     color: #1E4D8C;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     font-size: 18px;
+    font-weight: 600;
 }
 
 .filter-group ul {
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .filter-group ul li {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
-.filter-group ul a {
+.filter-group ul li a {
+    display: block;
+    padding: 10px 12px;
     color: #333;
     text-decoration: none;
-    font-size: 14px;
-    transition: color 0.3s;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    margin-bottom: 5px;
 }
 
-.filter-group ul a:hover,
-.filter-group ul a.active {
+.filter-group ul li a:hover {
     color: #00A896;
+    background-color: rgba(0, 168, 150, 0.1);
 }
+
+.filter-group ul li a.active {
+    color: #00A896;
+    font-weight: 600;
+    background-color: #00A896;
+    color: white;
+    padding: 10px 12px;
+    border-radius: 5px;
+}
+
+
 
 .products-container {
     background: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Garantir que products-container não exista na estrutura atual */
+.products-section .products-container {
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
 }
 
 .product-button {
@@ -3466,14 +3574,31 @@ body {
 
 /* Seção de Produtos */
 .products-section {
-    padding: 40px 0;
-    background-color: #f9f9fa;
+    padding: 0;
+    background-color: transparent;
+    clear: none;
+    position: relative;
+    width: 100%;
+    overflow: visible;
+    z-index: 1;
 }
 
-.products-section .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
+
+.products-section .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .products-section .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 /* Estilos da Paginação */
