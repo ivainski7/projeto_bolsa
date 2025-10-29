@@ -304,16 +304,50 @@ document.addEventListener('DOMContentLoaded', function() {
     var openFilterModal = document.getElementById('openFilterModal');
     var filterModal = document.getElementById('filterModal');
     var closeFilterModal = document.getElementById('closeFilterModal');
+    
+    console.log('Filtro modal - openFilterModal:', openFilterModal);
+    console.log('Filtro modal - filterModal:', filterModal);
+    console.log('Filtro modal - closeFilterModal:', closeFilterModal);
+    
     if (openFilterModal && filterModal && closeFilterModal) {
+        // Abrir modal
         openFilterModal.addEventListener('click', function(e) {
             e.preventDefault();
+            e.stopPropagation();
+            console.log('Clicou para abrir filtro modal');
             filterModal.classList.add('active');
         });
+        
+        openFilterModal.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Touch para abrir filtro modal');
+            filterModal.classList.add('active');
+        });
+        
+        // Fechar modal
         closeFilterModal.addEventListener('click', function(e) {
             e.preventDefault();
+            e.stopPropagation();
+            console.log('Clicou para fechar filtro modal');
             filterModal.classList.remove('active');
         });
+        
+        closeFilterModal.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            filterModal.classList.remove('active');
+        });
+        
+        // Fechar ao clicar no fundo
         filterModal.addEventListener('click', function(e) {
+            if (e.target === filterModal) {
+                console.log('Clicou no fundo para fechar');
+                filterModal.classList.remove('active');
+            }
+        });
+        
+        filterModal.addEventListener('touchend', function(e) {
             if (e.target === filterModal) {
                 filterModal.classList.remove('active');
             }
