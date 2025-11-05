@@ -47,3 +47,4 @@ Se após 24h ainda não funcionar:
 
 **Tempo estimado**: 5 minutos de configuração + até 24h de espera
 
+
